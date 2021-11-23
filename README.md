@@ -6,4 +6,3 @@ This project explores 3 common vulnerabilites in web developement with varying l
 1. SQL Injection
 2. Cross site scripting (XSS)
 3. Cross site request forgery (CSRF)
-4. 
